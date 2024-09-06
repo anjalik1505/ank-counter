@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const Counter = () => {
   const [count, setCount] = useState(0);
 
-  const increment = () => setCount(count + 1);
-  const decrement = () => setCount(count - 1);
+  const increment = (num) => setCount(count + num);
+  const decrement = (num) => setCount(count - num);
   const reset = () => setCount(0);
 
   return (
@@ -15,13 +15,13 @@ const Counter = () => {
       </div>
       <div className="flex space-x-4">
         <button
-          onClick={increment}
+          onClick={()=>increment(1)}
           className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition duration-200"
         >
           Increment
         </button>
         <button
-          onClick={decrement}
+          onClick={()=>decrement(1)}
           className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-200"
         >
           Decrement
@@ -31,6 +31,19 @@ const Counter = () => {
           className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
         >
           Reset
+        </button>
+
+        <button
+          onClick={()=>increment(10)}
+          className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition duration-200"
+        >
+          Increment By 10
+        </button>
+        <button
+          onClick={()=>decrement(10)}
+          className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition duration-200"
+        >
+          Decrement By 10
         </button>
       </div>
     </div>
